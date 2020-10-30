@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 
 abstract class BaseActivity : AppCompatActivity() {
 
@@ -16,11 +17,15 @@ abstract class BaseActivity : AppCompatActivity() {
         const val INTENT_REQUEST_CODE_SELECT_IMAGE_FROM_GALLERY = 2222
     }
 
-    fun selectImageFromGallery() {
+    protected fun selectImageFromGallery() {
         if (isOSLaterThanAndroidM())
             if (isReadStoragePermissionGiven()) pickImageFromGallery() else requestReadExternalStoragePermission()
         else
             pickImageFromGallery()
+    }
+
+    protected fun showSnackbar(message: String) {
+        Snackbar.make(window.decorView, message, Snackbar.LENGTH_LONG).show()
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -63,6 +68,7 @@ abstract class BaseActivity : AppCompatActivity() {
     private fun pickImageFromGallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = INTENT_TYPE_IMAGE
+        intent.action = Intent.ACTION_GET_CONTENT;
         startActivityForResult(intent, INTENT_REQUEST_CODE_SELECT_IMAGE_FROM_GALLERY)
     }
 }

@@ -34,7 +34,20 @@
                 android:layout_width="@dimen/image_height"
                 android:layout_height="@dimen/image_height"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/margin_large" />
+                android:layout_marginBottom="@dimen/margin_large"
+                android:scaleType="centerCrop" />
+
+<!--            <com.padc.firebasemlkit_sample_android.graphics.GraphicOverlay-->
+<!--                android:id="@+id/graphicOverlay"-->
+<!--                android:layout_width="@dimen/image_height"-->
+<!--                android:layout_height="@dimen/image_height"-->
+<!--                android:layout_alignStart="@id/ivImage"-->
+<!--                android:layout_alignTop="@id/ivImage"-->
+<!--                android:layout_alignEnd="@id/ivImage"-->
+<!--                c-->
+<!--                android:background="@android:color/holo_green_dark"-->
+<!--                android:layout_alignBottom="@id/ivImage"-->
+<!--                />-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnTakePhoto"
@@ -44,17 +57,17 @@
                 android:text="@string/label_take_photo" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnFindText"
+                android:id="@+id/btnFindFace"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin_xxlarge"
                 android:layout_below="@id/btnTakePhoto"
                 android:text="@string/label_find_face" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnFindFace"
+                android:id="@+id/btnFindText"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin_xxlarge"
-                android:layout_below="@id/btnFindText"
+                android:layout_below="@id/btnFindFace"
                 android:text="@string/label_find_text" />
 
 
