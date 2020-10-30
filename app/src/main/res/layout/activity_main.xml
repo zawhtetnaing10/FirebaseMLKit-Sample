@@ -35,25 +35,24 @@
                 android:layout_height="@dimen/image_height"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/margin_large"
-                android:scaleType="centerCrop" />
+                android:scaleType="fitCenter" />
 
-<!--            <com.padc.firebasemlkit_sample_android.graphics.GraphicOverlay-->
-<!--                android:id="@+id/graphicOverlay"-->
-<!--                android:layout_width="@dimen/image_height"-->
-<!--                android:layout_height="@dimen/image_height"-->
-<!--                android:layout_alignStart="@id/ivImage"-->
-<!--                android:layout_alignTop="@id/ivImage"-->
-<!--                android:layout_alignEnd="@id/ivImage"-->
-<!--                c-->
-<!--                android:background="@android:color/holo_green_dark"-->
-<!--                android:layout_alignBottom="@id/ivImage"-->
-<!--                />-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDetectedTexts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivImage"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:textSize="@dimen/text_regular"
+                android:textStyle="bold" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnTakePhoto"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin_xxlarge"
-                android:layout_below="@id/ivImage"
+                android:layout_below="@id/tvDetectedTexts"
+                android:layout_marginTop="@dimen/margin_medium_2"
                 android:text="@string/label_take_photo" />
 
             <com.google.android.material.button.MaterialButton
